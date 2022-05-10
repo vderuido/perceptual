@@ -19,6 +19,7 @@ def reproduceAudio(ruta, archivos, indice):
     playsound(ruta+'/'+archivos[indice])
 
     ## Variables Globales
+
 rutaTutorial='/home/vic/Documents/universidad/PFM/Audios/tutorial'
 miruta='/home/vic/Documents/universidad/PFM/Audios/IRsTest'
 misArchivosTutorial=listaArchivos(rutaTutorial)
@@ -46,14 +47,17 @@ iguales=False
 seguridad=False
 
 class Main:
+
     def __init__(self):
         sl.title("Perceptual APP")
 
 
 
         with sl.sidebar:
-            opcion=sl.selectbox("Escoja un apartado",("Tutorial","Test"))
+            opcion=sl.selectbox("Escoja un apartado",("Inicio","Tutorial","Test"))
 
+        if opcion=="Inicio":
+            sl.write("EN CONSTRUCCION")
 
         if opcion=="Tutorial":
 
@@ -97,8 +101,8 @@ class Main:
                 sl.audio(audio_bytes, format='audio/wav')
 
         if opcion=="Test":
-
             numero=1
+
             sl.header("Test")
             sl.write("Audio ", numero, " de 5")
             caso1,caso2=sl.columns(2)
@@ -125,6 +129,7 @@ class Main:
             if sl.button("Enviar"):
                 pulsado==True
             if pulsado==True:
+
                 numero=numero+1
                 pulsado=False
 
